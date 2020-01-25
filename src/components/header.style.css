@@ -1,0 +1,21 @@
+/* Header Style */
+.header {
+  background: #FFFFFF;
+  box-shadow: 0px 8px 16px rgba(7, 6, 36, 0.1);
+  margin-bottom: 60px;
+}
+.headerInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px 0;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+.headerLink {
+  text-decoration: none;
+  color: inherit;
+  padding: 20px;
+  text-transform: capitalize;
+}

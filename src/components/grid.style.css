@@ -1,0 +1,21 @@
+/* Grid Style */
+.grid {
+  margin: 40px 0;
+}
+.grid-heading {
+  display: flex;
+  justify-content: space-between;
+}
+.grid-heading__title {
+  font-size: 26px;
+  color: #313236;  
+}
+.grid-heading__link {
+  font-size: 18px;
+  color: #7C7D8D;
+}
+.grid-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20px;
+}
