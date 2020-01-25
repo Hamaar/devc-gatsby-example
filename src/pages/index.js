@@ -11,7 +11,6 @@ const IndexPage = ({ data }) => {
   const { allMarkdownRemark } = data
   const { edges } = allMarkdownRemark
 
-  console.log('edges', edges)
   return (
     <Layout>
       {/* SEO Meta */}
