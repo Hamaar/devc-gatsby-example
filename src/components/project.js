@@ -1,13 +1,13 @@
 import React from "react"
 import "./project.style.css"
 
-const Profile = ({ name }) => (
+const Profile = ({ title, description }) => (
   <section className="project">
     <div className="project-title">
-      Title Here
+      {title}
     </div>
     <div className="project-description">
-      Description Here
+      {description}
     </div>
   </section>
 )

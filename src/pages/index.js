@@ -11,6 +11,7 @@ const IndexPage = ({ data }) => {
   const { allMarkdownRemark } = data
   const { edges } = allMarkdownRemark
 
+  console.log('edges', edges)
   return (
     <Layout>
       {/* SEO Meta */}
@@ -18,17 +19,21 @@ const IndexPage = ({ data }) => {
       {/* Blog Section */}
       <Grid title="Latest from the blog">
         {
-          edges.map(item => (
-            <Blog key={item}/>
-          ))
+          edges.map(({ node: { frontmatter: { title, date, type, description } } }, index) => {
+            if (type === 'blog') {
+              return (<Blog key={index} date={date} title={title}/>)
+            }
+          })
         }
       </Grid>
       {/* Project Section */}
       <Grid title="Popular projects">
         {
-          edges.map(item => (
-            <Project key={item}/>
-          ))
+          edges.map(({ node: { frontmatter: { title, date, type, description } } }, index) => {
+            if (type === 'project') {
+              return (<Project key={index} title={title} description={description}/>)
+            }
+          })
         }
       </Grid>
       {/* Callout Section */}
@@ -53,6 +58,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             title
+            type
           }
         }
       }
